@@ -34,7 +34,26 @@ const AuthService = ({ children }) => {
     }
   };
 
-  const register = () => {};
+  const register = async (userData) => {
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/auth/register`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(userData),
+        }
+      );
+      const data = await response.json();
+      if (response.ok) {
+        navigate("/home");
+      } else {
+        console.error("Error during register:", data.message);
+      }
+    } catch (error) {
+      console.error("Error during register:", error);
+    }
+  };
 
   const logout = () => {
     localStorage.removeItem("login_token");
