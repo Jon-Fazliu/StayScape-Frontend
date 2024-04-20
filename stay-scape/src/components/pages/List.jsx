@@ -1,6 +1,6 @@
 import "./list.css";
-import Navbar from "./Navbar";
-import Header from "./Header";
+import Navbar from "../Navbar";
+import Header from "../Header";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { format } from "date-fns";
@@ -8,10 +8,10 @@ import { DateRange } from "react-date-range";
 
 const List = () => {
   const location = useLocation();
-  const destination = ""
-  const date = ""
+  const destination = "";
+  const date = "";
   const [openDate, setOpenDate] = useState(false);
-  const options = ""
+  const options = "";
 
   return (
     <div>
@@ -31,8 +31,7 @@ const List = () => {
             </div>
             <div className="lsItem">
               <label>Check-in Date</label>
-              <span onClick={() =>  console.log("Changed check in date")}>
-              </span>
+              <span onClick={() => console.log("Changed check in date")}></span>
               {openDate && (
                 <DateRange
                   onChange={(item) => console.log("Changed date")}
