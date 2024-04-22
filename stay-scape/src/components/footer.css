@@ -2,6 +2,10 @@
   width: 100%;
   width: 1024px;
   font-size: 12px;
+  padding: 20px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
 }
 
 .fLists {
@@ -11,7 +15,7 @@
   margin-bottom: 50px;
 }
 
-.fLists {
+.fList {
   list-style: none;
   padding: 0;
 }
@@ -21,3 +25,4 @@
   color: #003580;
   cursor: pointer;
 }
+

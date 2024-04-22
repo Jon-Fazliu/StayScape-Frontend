@@ -1,4 +1,4 @@
-import "./mailList.css";
+import "./mailList.css"
 
 const MailList = () => {
   return (
@@ -9,12 +9,11 @@ const MailList = () => {
       </span>
 
       <div className="mailInputContainer">
-        <input type="text" placeholder="Your email">
-          {" "}
-        </input>
+        <input type="text" placeholder="Your email"/>
+          
         <button>Subscribe </button>
       </div>
     </div>
-  );
-};
-export default MailList;
+  )
+}
+export default MailList

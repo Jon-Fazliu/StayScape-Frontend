@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory, useNavigate } from "react-router-dom"; // Assuming you're using React Router for navigation
+import { useNavigate } from "react-router-dom"; // Assuming you're using React Router for navigation
 import { useAuth } from "../../AuthService";
 
 const Login = () => {
