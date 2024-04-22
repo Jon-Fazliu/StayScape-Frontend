@@ -1,0 +1,50 @@
+.header{
+    background-color: #003580;
+    color: white;
+    justify-content: center;
+}
+.headerContainer{
+     width: 100%;
+     max-width: 1024px;
+     margin-left: auto;
+     margin-right: auto;
+     
+}
+
+.headerList{
+    display: flex;
+    gap: 40px;
+}
+.headerListItem{
+    display: flex;
+    align-items: center;
+    gap: 10px
+    
+}
+
+.headerListItem.active{
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 40px;
+}
+.headerBtn{
+    margin: 20px 0px;
+    background-color: #0071c2;
+    color: white;
+    font-weight: 500;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.headerTitle{
+    .headerTitle {
+        font-size: 36px; /* Adjust the font size as needed */
+        font-weight: bold; /* Make the text bold */
+        text-align: center; /* Center-align the text */
+        color: #333; /* Set the text color */
+        margin-bottom: 20px; /* Add space below the title */
+        text-transform: uppercase; /* Convert text to uppercase */
+        /* Add additional styles if needed */
+      }
+}
