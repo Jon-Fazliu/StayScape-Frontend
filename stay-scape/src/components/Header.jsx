@@ -1,5 +1,3 @@
-import Navbar from "./Navbar";
-
 import "./header.css";
 
 const Header = () => {
@@ -11,14 +9,15 @@ const Header = () => {
             <span> Stays</span>
           </div>
           <div className="headerListItem active">
-          <span> Hotels</span>
+            <span> Hotels</span>
           </div>
         </div>
 
-<h1 className="headerTitle">Discover Endless Adventures - Book Your Stay Today!</h1>
-<button className="headerBtn">Sign in / Register</button>
+        <h1 className="headerTitle">
+          Discover Endless Adventures - Book Your Stay Today!
+        </h1>
       </div>
-      </div>
+    </div>
   );
 };
 
