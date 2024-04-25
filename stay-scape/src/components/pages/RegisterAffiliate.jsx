@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Assuming you're using React Router for navigation
 import { useAuth } from "../../AuthService";
 
-const Register = () => {
+const RegisterAffiliate = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [dateOfBirth, setDateOfBirth] = useState("");
+  const [website, setWebsite] = useState("");
   const [street, setStreet] = useState("");
   const [streetNumber, setStreetNumber] = useState("");
   const [city, setCity] = useState("");
@@ -23,19 +22,17 @@ const Register = () => {
     navigate("/login");
   };
 
-  const redirectToAffiliate = () => {
-    navigate("/affiliate/register");
+  const redirectToRegister = () => {
+    navigate("/register");
   };
 
   const register = () => {
-    const date = new Date(dateOfBirth).toISOString();
-    auth.register({
+    auth.registerAffiliate({
       email: email,
       password: password,
-      firstName: firstName,
-      lastName: lastName,
+      name: name,
       phoneNumber: phone,
-      dateOfBirth: date,
+      website: website,
       address: {
         street: street,
         streetNumber: streetNumber,
@@ -48,7 +45,7 @@ const Register = () => {
 
   return (
     <div className="register">
-      <h2>Register</h2>
+      <h2>Join as affiliate</h2>
       <div>
         <label>Email:</label>
         <input
@@ -66,19 +63,11 @@ const Register = () => {
         />
       </div>
       <div>
-        <label>First Name:</label>
+        <label>Name:</label>
         <input
           type="text"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-      </div>
-      <div>
-        <label>Last Name:</label>
-        <input
-          type="text"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
       </div>
       <div>
@@ -90,11 +79,11 @@ const Register = () => {
         />
       </div>
       <div>
-        <label>Date of Birth:</label>
+        <label>Website:</label>
         <input
-          type="date"
-          value={dateOfBirth}
-          onChange={(e) => setDateOfBirth(e.target.value)}
+          type="text"
+          value={website}
+          onChange={(e) => setWebsite(e.target.value)}
         />
       </div>
       <div>
@@ -140,11 +129,11 @@ const Register = () => {
 
       <button onClick={register}>Register</button>
       <button onClick={redirectToLogin}>Already have an account? Log in</button>
-      <button onClick={redirectToAffiliate}>
-        Wish to become an affiliate? Register here
+      <button onClick={redirectToRegister}>
+        Wish to create a user account? Register here
       </button>
     </div>
   );
 };
 
-export default Register;
+export default RegisterAffiliate;

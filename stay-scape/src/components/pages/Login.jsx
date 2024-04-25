@@ -10,6 +10,8 @@ const Login = () => {
   const auth = useAuth();
 
   const handleLogin = () => {
+    console.log(email);
+    console.log(password);
     auth.login(email, password);
   };
 

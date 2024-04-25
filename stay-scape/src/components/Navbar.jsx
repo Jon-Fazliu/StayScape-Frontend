@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const authenticated = useAuth().getAuthenticated();
+
+  const auth = useAuth();
+  const authenticated = localStorage.getItem("login_token") ? true : false;
 
   const handleRegisterClick = () => {
     navigate("/register");
@@ -12,6 +14,11 @@ const Navbar = () => {
 
   const handleLoginClick = () => {
     navigate("/login");
+  };
+
+  const handleLogoutClick = () => {
+    auth.logout();
+    navigate("/home");
   };
 
   return (
@@ -28,6 +35,11 @@ const Navbar = () => {
                 Login
               </button>
             </>
+          )}
+          {authenticated && (
+            <button className="navButton" onClick={handleLogoutClick}>
+              Logout
+            </button>
           )}
         </div>
       </div>
